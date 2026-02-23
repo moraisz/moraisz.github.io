@@ -1,5 +1,4 @@
 import './css/style.css';
-// import viteLogo from '/vite.svg';
 import { createIcons, Mail, Linkedin, Github, ExternalLink, Briefcase, Calendar, MapPin } from 'lucide';
 import { Header } from './components/header';
 import { Hero } from './components/hero';
