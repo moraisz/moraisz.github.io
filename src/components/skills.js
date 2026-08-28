@@ -42,7 +42,7 @@ const skillGroups = [
             { name: "AWS", icon: "devicon-amazonwebservices-plain colored" },
             { name: "GCP", icon: "devicon-googlecloud-plain colored" },
             { name: "Linux", icon: "devicon-linux-plain" },
-            { name: "Git", icon: "devicon-git-plain" },
+            { name: "Git", icon: "devicon-git-plain colored" },
             { name: "GitHub", icon: "devicon-github-plain" },
         ],
     },
@@ -91,4 +91,4 @@ export function Skills() {
 </section>
 
 `;
-};
+}

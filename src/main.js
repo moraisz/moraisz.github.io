@@ -1,5 +1,16 @@
 import './css/style.css';
-import { createIcons, Mail, Linkedin, Github, ExternalLink, Briefcase, Calendar, MapPin } from 'lucide';
+import {
+    createIcons,
+    Mail,
+    Linkedin,
+    Github,
+    ExternalLink,
+    Briefcase,
+    Calendar,
+    MapPin,
+    Menu,
+    X,
+} from 'lucide';
 import { Header } from './components/header';
 import { Hero } from './components/hero';
 import { About } from './components/about';
@@ -11,7 +22,7 @@ import './utils/scrollToSection.js'; // Import só para executar o side-effect
 
 document.getElementById('app').innerHTML = `
 <div class="min-h-screen bg-black text-white">
-    ${Header()}
+    <div id="header-container">${Header()}</div>
     <main>
         ${Hero()}
         ${About()}
@@ -23,14 +34,26 @@ document.getElementById('app').innerHTML = `
 </div>
 `;
 
-createIcons({
-    icons: {
-        Mail,
-        Linkedin,
-        Github,
-        ExternalLink,
-        Briefcase,
-        Calendar,
-        MapPin,
-    }
-});
+function initIcons() {
+    createIcons({
+        icons: {
+            Mail,
+            Linkedin,
+            Github,
+            ExternalLink,
+            Briefcase,
+            Calendar,
+            MapPin,
+            Menu,
+            X // adicionei o X pro ícone de fechar o menu
+        }
+    });
+}
+
+// expõe globalmente para o Header usar
+window.renderHeader = function() {
+    document.getElementById('header-container').innerHTML = Header();
+    initIcons();
+}
+
+initIcons();

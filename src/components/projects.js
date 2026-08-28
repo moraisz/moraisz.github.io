@@ -6,7 +6,7 @@ const projects = [
         description:
         "Site de blog pessoal com painel administrativo para gerenciamento de posts e categorias, utilizando Laravel e Filament para uma experiência de administração eficiente.",
         tags: ["PHP", "Laravel", "Filament", "PostgreSQL", "Docker"],
-        demo: "https://blogleticia.fly.dev",
+        demo: "https://psicologaleticiamorais.com",
     },
     {
         title: "QueueFlow",
@@ -20,12 +20,15 @@ const projects = [
 export function Projects() {
     return html`
 
-<section id="projetos" class="py-20 px-6 bg-gray-950">
+<section id="projetos" class="py-20 px-6 bg-gray-950 relative overflow-hidden">
     <div class="container mx-auto max-w-6xl">
-        <h2 class="text-4xl font-bold mb-12 text-center">
-            <span class="text-white">Meus </span>
-            <span class="text-gray-400">Projetos</span>
-        </h2>
+        <div class="flex flex-col items-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">
+                <span class="text-white">Meus </span>
+                <span class="text-gray-400">Projetos</span>
+            </h2>
+            <div class="mb-12 h-1 w-20 bg-gradient-to-r from-gray-700 to-white rounded-full" />
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             ${projects.map((project) => `

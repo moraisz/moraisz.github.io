@@ -1,5 +1,5 @@
 import { html } from '../utils/html.js';
-import profile from '/images/profile.jpg';
+import profile from '/images/profile.webp';
 
 export function Hero() {
     return html`
