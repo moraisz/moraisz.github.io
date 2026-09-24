@@ -1,0 +1,25 @@
+---
+const skillGroups = [
+	{ category: 'Frontend', skills: [{ name: 'HTML', icon: 'devicon-html5-plain colored' }, { name: 'CSS', icon: 'devicon-css3-plain colored' }, { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain colored' }, { name: 'JavaScript', icon: 'devicon-javascript-plain colored' }, { name: 'TypeScript', icon: 'devicon-typescript-plain colored' }, { name: 'Vue.js', icon: 'devicon-vuejs-plain colored' }] },
+	{ category: 'Backend', skills: [{ name: 'PHP', icon: 'devicon-php-plain colored' }, { name: 'Laravel', icon: 'devicon-laravel-plain colored' }, { name: 'Python', icon: 'devicon-python-plain colored' }, { name: 'FastAPI', icon: 'devicon-fastapi-plain' }, { name: 'Flask', icon: 'devicon-flask-plain' }, { name: 'Django', icon: 'devicon-django-plain' }, { name: 'Node.js', icon: 'devicon-nodejs-plain colored' }, { name: 'Go', icon: 'devicon-go-original-wordmark colored' }] },
+	{ category: 'Banco de dados', skills: [{ name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' }, { name: 'MySQL', icon: 'devicon-mysql-plain colored' }, { name: 'MariaDB', icon: 'devicon-mariadb-plain colored' }, { name: 'Redis', icon: 'devicon-redis-plain colored' }, { name: 'Firebase', icon: 'devicon-firebase-plain colored' }] },
+	{ category: 'Infra, DevOps e ferramentas', skills: [{ name: 'Docker', icon: 'devicon-docker-plain colored' }, { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark colored' }, { name: 'GCP', icon: 'devicon-googlecloud-plain colored' }, { name: 'Linux', icon: 'devicon-linux-plain' }, { name: 'Git', icon: 'devicon-git-plain colored' }, { name: 'GitHub', icon: 'devicon-github-plain' }] },
+];
+---
+
+<section id="skills" class="section">
+	<div class="container">
+		<h2 class="section-heading section-heading--lined">Minhas <span>Habilidades</span></h2>
+		<div class="heading-line"></div>
+		<div class="skills-grid">
+			{skillGroups.map((group) => (
+				<article class="skill-group">
+					<h3 class="eyebrow">{group.category}</h3>
+					<ul class="skill-list">
+						{group.skills.map((skill) => <li class="skill"><i class={skill.icon} aria-hidden="true"></i>{skill.name}</li>)}
+					</ul>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

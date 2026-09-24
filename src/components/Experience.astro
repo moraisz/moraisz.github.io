@@ -1,0 +1,28 @@
+---
+const experiences = [{
+	company: 'Turimsoft',
+	position: 'Desenvolvedor pleno',
+	period: '2024 - Presente',
+	description: 'Desenvolvimento de aplicações web com PHP 8 e manutenção em sistema legado com PHP 7. Implementação de APIs REST e mentoria de desenvolvedores juniores.',
+	achievements: ['Contribuiu para o aumento de 20% na eficiência do sistema através da otimização de consultas SQL', 'Criou uma API REST de Proxy para integração com sistemas de terceiros, facilitando a comunicação entre plataformas', 'Encontrou e corrigiu erros de segurança, melhorando a confiabilidade do sistema'],
+}];
+---
+
+<section id="experiencia" class="section">
+	<div class="container">
+		<h2 class="section-heading">Experiência <span>Profissional</span></h2>
+		<div class="experience-list">
+			{experiences.map((experience) => (
+				<article class="experience-card">
+					<div class="experience-top">
+						<div><h3 class="experience-role">{experience.position}</h3><div class="experience-meta"><i class="ph ph-briefcase" aria-hidden="true"></i>{experience.company}</div></div>
+						<div class="experience-meta"><i class="ph ph-calendar-blank" aria-hidden="true"></i>{experience.period}</div>
+					</div>
+					<p class="card-copy">{experience.description}</p>
+					<h4 class="achievement-heading">Principais conquistas:</h4>
+					<ul class="achievements">{experience.achievements.map((achievement) => <li>{achievement}</li>)}</ul>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

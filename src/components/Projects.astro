@@ -1,0 +1,28 @@
+---
+const projects = [
+	{ title: 'Blog Leticia', description: 'Site de blog pessoal com painel administrativo para gerenciamento de posts e categorias, utilizando Laravel e Filament para uma experiência de administração eficiente.', tags: ['PHP', 'Laravel', 'Filament', 'PostgreSQL', 'Docker'], demo: 'https://psicologaleticiamorais.com' },
+	{ title: 'QueueFlow', description: 'Aplicativo de gerenciamento de filas de atendimento, permitindo que os usuários criem e gerenciem suas filas de forma eficiente, utilizando PHP e PostgreSQL para garantir desempenho e escalabilidade.', tags: ['PHP', 'PostgreSQL', 'Docker'], github: 'https://github.com/moraisz/queueflow' },
+];
+---
+
+<section id="projetos" class="section section--muted">
+	<div class="container">
+		<h2 class="section-heading section-heading--lined">Meus <span>Projetos</span></h2>
+		<div class="heading-line"></div>
+		<div class="projects-grid">
+			{projects.map((project) => (
+				<article class="project-card">
+					<div class="project-content">
+						<h3 class="card-title">{project.title}</h3>
+						<p class="card-copy">{project.description}</p>
+						<ul class="tag-list">{project.tags.map((tag) => <li class="tag">{tag}</li>)}</ul>
+						<div class="card-links">
+							{project.github && <a class="card-link" href={project.github} target="_blank" rel="noopener noreferrer"><i class="ph-fill ph-github-logo" aria-hidden="true"></i>Código</a>}
+							{project.demo && <a class="card-link" href={project.demo} target="_blank" rel="noopener noreferrer"><i class="ph ph-arrow-square-out" aria-hidden="true"></i>Demo</a>}
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+	</div>
+</section>

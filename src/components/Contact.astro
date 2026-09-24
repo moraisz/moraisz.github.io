@@ -1,0 +1,29 @@
+<section id="contato" class="section section--muted">
+	<div class="container">
+		<h2 class="section-heading">Entre em <span>Contato</span></h2>
+		<div class="contact-grid">
+			<div>
+				<h3 class="contact-subtitle">Vamos conversar!</h3>
+				<p class="contact-copy">Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte de suas visões.</p>
+				<div class="contact-details">
+					<div><i class="ph ph-envelope" aria-hidden="true"></i><span>marcosviniciusm99@gmail.com</span></div>
+					<div><i class="ph ph-map-pin" aria-hidden="true"></i><span>Brasil</span></div>
+				</div>
+			</div>
+			<form class="contact-form" id="contact-form">
+				<label class="field">Nome<input type="text" name="name" required placeholder="Seu nome" /></label>
+				<label class="field">E-mail<input type="email" name="email" required placeholder="seu@email.com" /></label>
+				<label class="field">Mensagem<textarea name="message" required placeholder="Sua mensagem..."></textarea></label>
+				<button class="primary-button" type="submit">Enviar mensagem</button>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.querySelector<HTMLFormElement>('#contact-form')?.addEventListener('submit', (event) => {
+		event.preventDefault();
+		alert('Mensagem enviada com sucesso!');
+		if (event.currentTarget instanceof HTMLFormElement) event.currentTarget.reset();
+	});
+</script>

@@ -1,0 +1,47 @@
+<header class="site-header">
+	<nav class="container header-nav" aria-label="Navegação principal">
+		<a class="brand" href="#inicio">&lt;<span class="muted">Moraisz</span>/&gt;</a>
+		<ul class="nav-links nav-links--desktop">
+			<li><a class="nav-link" href="#sobre">Sobre</a></li>
+			<li><a class="nav-link" href="#skills">Habilidades</a></li>
+			<li><a class="nav-link" href="#projetos">Projetos</a></li>
+			<li><a class="nav-link" href="#experiencia">Experiência</a></li>
+			<li><a class="nav-link" href="#contato">Contato</a></li>
+		</ul>
+		<button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+			<i class="ph ph-list" aria-hidden="true"></i>
+		</button>
+	</nav>
+	<div class="container mobile-menu">
+		<ul class="nav-links">
+			<li><a class="nav-link" href="#sobre">Sobre</a></li>
+			<li><a class="nav-link" href="#skills">Habilidades</a></li>
+			<li><a class="nav-link" href="#projetos">Projetos</a></li>
+			<li><a class="nav-link" href="#experiencia">Experiência</a></li>
+			<li><a class="nav-link" href="#contato">Contato</a></li>
+		</ul>
+	</div>
+</header>
+
+<script>
+	const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+	const menu = document.querySelector<HTMLElement>('.mobile-menu');
+	const menuIcon = toggle?.querySelector('i');
+
+	const closeMenu = () => {
+		menu?.classList.remove('is-open');
+		toggle?.setAttribute('aria-expanded', 'false');
+		toggle?.setAttribute('aria-label', 'Abrir menu');
+		menuIcon?.classList.replace('ph-x', 'ph-list');
+	};
+
+	toggle?.addEventListener('click', () => {
+		const isOpen = menu?.classList.toggle('is-open') ?? false;
+		toggle.setAttribute('aria-expanded', String(isOpen));
+		toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+		menuIcon?.classList.toggle('ph-list', !isOpen);
+		menuIcon?.classList.toggle('ph-x', isOpen);
+	});
+
+	menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+</script>
